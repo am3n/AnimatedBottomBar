@@ -320,6 +320,7 @@ internal class TabView @JvmOverloads constructor(
                 it.setBackgroundColor(badge.backgroundColor ?: style.badge.backgroundColor)
                 it.textColor = badge.textColor ?: style.badge.textColor
                 it.textSize = badge.textSize ?: style.badge.textSize
+                it.typeface = badge.typeface ?: style.badge.typeface
 
                 it.isEnabled = true
             }
@@ -403,9 +404,8 @@ internal class TabView @JvmOverloads constructor(
 
         val valueFrom: Float
         val valueTo: Float
-        val animationType = if (selected) style.tabAnimationSelected else style.tabAnimation
 
-        when(animationType) {
+        when(if (selected) style.tabAnimationSelected else style.tabAnimation) {
             AnimatedBottomBar.TabAnimation.SLIDE -> {
                 if (selected) {
                     valueFrom = when {
