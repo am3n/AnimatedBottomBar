@@ -435,6 +435,9 @@ internal class TabView @JvmOverloads constructor(
 
                 animation = AlphaAnimation(valueFrom, valueTo)
             }
+            AnimatedBottomBar.TabAnimation.NONE -> {
+
+            }
         }
 
         return animation?.apply {
